@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define MAX 100000
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        char str1[MAX],str2[MAX],str3[MAX];
+        cin>>str1;
+        getchar();
+        getchar();
+        cin>>str2;
+        getchar();
+        getchar();
+        cin>>str3;
+ 
+        if(strstr(str1,"machula"))
+        {
+            int len2=strlen(str2);
+            int len3=strlen(str3);
+            int num3=0;
+            int num2=0;
+            for(int i=0;i<len2;i++)
+                num2=10*num2+(str2[i]-'0');
+            for(int i=0;i<len3;i++)
+                num3=10*num3+(str3[i]-'0');
+            int ans=num3-num2;
+            cout<<ans<<" + "<<str2<<" = "<<str3<<endl;
+            continue;
+        }
+        if(strstr(str2,"machula"))
+        {
+            int len1=strlen(str1);
+            int len3=strlen(str3);
+            int num3=0;
+            int num1=0;
+            for(int i=0;i<len1;i++)
+                num1=10*num1+(str1[i]-'0');
+            for(int i=0;i<len3;i++)
+                num3=10*num3+(str3[i]-'0');
+            int ans=num3-num1;
+            cout<<str1<<" + "<<ans<<" = "<<str3<<endl;
+            continue;
+        }
+        if(strstr(str3,"machula"))
+        {
+            int len2=strlen(str2);
+            int len1=strlen(str1);
+            int num1=0;
+            int num2=0;
+            for(int i=0;i<len2;i++)
+                num2=10*num2+(str2[i]-'0');
+            for(int i=0;i<len1;i++)
+                num1=10*num1+(str1[i]-'0');
+            int ans=num1+num2;
+            cout<<str1<<" + "<<str2<<" = "<<ans<<endl;
+            continue;
+        }
+    }
+}
